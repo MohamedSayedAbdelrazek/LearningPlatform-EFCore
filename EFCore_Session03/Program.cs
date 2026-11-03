@@ -48,7 +48,7 @@ namespace EFCore_Session03
 
                     );
                 await context.SaveChangesAsync();
-            } 
+            }
             #endregion
 
             #region Seed Enrollments
@@ -475,6 +475,33 @@ namespace EFCore_Session03
 
             #endregion
 
+            #region Part03 => BulkOperations
+
+            ///*
+            // Bulk price raise: In a single statement, without loading the entities, 
+            //raise the price of all published courses of a given level by 10%. 
+            //Print the number of affected rows.
+            // */
+            //Level targetLevel = Level.Beginner;
+
+            //int result = await context.Courses.Where(C => C.IsPublished && C.Level ==targetLevel)
+            //    .ExecuteUpdateAsync(e => e
+            //        .SetProperty(C => C.Price, C => C.Price * 1.10m)
+            //    );
+            //Console.WriteLine($"Updated rows: {result}");
+
+           
+            ///*
+            // Bulk delete: In a single statement, delete all enrollments whose status is Dropped.
+            //Print the number of affected rows.
+            // */
+
+            //int result2 = await context.Set<StudentCourse>().Where(SC => SC.Status == Status.Dropped)
+            //    .ExecuteDeleteAsync();
+
+            //Console.WriteLine($"Deleted rows: {result2}");
+            
+            #endregion
         }
     }
 }

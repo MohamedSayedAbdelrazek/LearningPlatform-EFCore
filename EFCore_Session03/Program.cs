@@ -146,7 +146,7 @@ namespace EFCore_Session03
                     );
                 await context.SaveChangesAsync();
 
-            } 
+            }
             #endregion
 
             #region Part03 => Create
@@ -247,6 +247,63 @@ namespace EFCore_Session03
             //    Console.WriteLine("Student enrolled successfully!");
 
             //} 
+            #endregion
+
+            #region Part03 => Read
+            //find a course
+            //var course = await context.Courses.FindAsync(1);
+            //var course02 = await context.Courses.FirstOrDefaultAsync(C => C.Title == "Programming");
+            //if (course is null)
+            //    Console.WriteLine("Course01 is null");
+            //if (course02 is null)
+            //    Console.WriteLine("Course02 is null");
+            
+            ////filter courses
+            //var courses = await context.Courses.Where(C => C.Price >= 2000 && C.Price <= 5000)
+            //    .OrderByDescending(C => C.Price)
+            //    .Select(C => new {C.Title,C.Level,C.Price})
+            //    .ToListAsync();
+
+            //foreach (var c in courses)
+            //{
+            //    Console.WriteLine($"{c.Title} | {c.Level} | {c.Price}");
+            //}
+
+            ////subcategoris, topLevel Categories
+            //var subCategories = await context.Set<Category>()
+            //    .Where(C => C.ParentId== 1)
+            //    .ToListAsync();
+
+            //foreach (var category in subCategories)
+            //{
+            //    Console.WriteLine(category.Name);
+            //}
+
+            //var topLevelCategories = await context.Set<Category>()
+            //    .Where(c => c.ParentId == null)
+            //    .ToListAsync();
+
+            //foreach (var category in topLevelCategories)
+            //{
+            //    Console.WriteLine(category.Name);
+            //}
+
+            ////Course roster
+            //var studentIds = await context.Set<StudentCourse>()
+            //    .Where(SC => SC.CourseId == 1)
+            //    .Select(SC => SC.StudentId)
+            //    .ToListAsync();
+
+            //var studentNames = await context.Set<Student>()
+            //    .Where(S => studentIds.Contains(S.Id))
+            //    .ToListAsync();
+
+            //Console.WriteLine($"Enrolled Students: {studentNames.Count}");
+
+            //foreach (var student in studentNames)
+            //{
+            //    Console.WriteLine(student.Name);
+            //}
             #endregion
 
         }

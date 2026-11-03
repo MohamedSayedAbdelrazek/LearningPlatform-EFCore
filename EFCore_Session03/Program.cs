@@ -257,7 +257,7 @@ namespace EFCore_Session03
             //    Console.WriteLine("Course01 is null");
             //if (course02 is null)
             //    Console.WriteLine("Course02 is null");
-            
+
             ////filter courses
             //var courses = await context.Courses.Where(C => C.Price >= 2000 && C.Price <= 5000)
             //    .OrderByDescending(C => C.Price)
@@ -306,6 +306,71 @@ namespace EFCore_Session03
             //}
             #endregion
 
+            #region Part03 => Update
+            ////change course price
+            //var course = await context.Courses.FindAsync(1);
+            //if(course is not null)
+            //    course.Price = 10000;
+            //await context.SaveChangesAsync();
+
+            ////update progress
+            //int courseId = 1;
+            //int studentId = 2;
+            //int newProgress = 100;
+
+            //if (newProgress < 0 || newProgress > 100)
+            //{
+            //    Console.WriteLine("Progress must be between 0 and 100");
+            //}
+            //else
+            //{
+            //    // Find enrollment
+            //    var enrollment = await context.Set<StudentCourse>()
+            //        .FindAsync(courseId, studentId);
+
+            //    if (enrollment is null)
+            //    {
+            //        Console.WriteLine("Enrollment not found");
+            //    }
+            //    else
+            //    {
+            //        enrollment.ProgressPercentage = newProgress;
+
+            //        if (newProgress == 100)
+            //        {
+            //            enrollment.Status = Status.Completed;
+            //        }
+
+            //        await context.SaveChangesAsync();
+
+            //        Console.WriteLine("Progress updated successfully");
+            //    }
+            //}
+
+            ////Publish a course
+            //int courseIdToPublish = 5;
+
+            //var course2 = await context.Set<Course>()
+            //    .FindAsync(courseIdToPublish);
+
+            //if (course2 is null)
+            //{
+            //    Console.WriteLine("Course not found");
+            //}
+            //else if (course2.IsPublished)
+            //{
+            //    Console.WriteLine("Course is already published");
+            //}
+            //else
+            //{
+            //    course2.IsPublished = true;
+            //    course2.PublishedDate = DateTime.Now;
+
+            //    await context.SaveChangesAsync();
+
+            //    Console.WriteLine("Course published successfully!");
+            //}
+            #endregion
         }
     }
 }

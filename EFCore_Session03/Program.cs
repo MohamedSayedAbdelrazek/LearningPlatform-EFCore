@@ -371,6 +371,110 @@ namespace EFCore_Session03
             //    Console.WriteLine("Course published successfully!");
             //}
             #endregion
+
+            #region Part03 => Delete
+
+            ////1.
+            //int courseId = 1;
+            //int studentId = 2;
+            //var enroll = await context.Set<StudentCourse>()
+            //    .FindAsync(courseId,studentId);
+            //if (enroll is not null)
+            //{
+            //    context.Set<StudentCourse>().Remove(enroll);
+            //    await context.SaveChangesAsync();
+
+            //    Console.WriteLine("Student unenrolled successfully");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Enrollment not found");
+            //}
+
+            ////2.
+            //try
+            //{
+            //    var category = await context.Set<Category>()
+            //        .FirstOrDefaultAsync(C => C.Childs.Any());
+            //    if (category is not null)
+            //    {
+            //        context.Set<Category>().Remove(category);
+
+            //        await context.SaveChangesAsync();
+            //    }
+            //}
+            //catch(DbUpdateException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+
+            ////safe version
+            //int categoryId = 1;
+
+            //bool hasChildren = await context.Set<Category>()
+            //    .AnyAsync(c => c.ParentId == categoryId);
+
+            //if (hasChildren)
+            //{
+            //    Console.WriteLine("Cannot delete category with children");
+            //}
+            //else
+            //{
+            //    var category = await context.Set<Category>()
+            //        .FindAsync(categoryId);
+
+            //    if (category is not null)
+            //    {
+            //        context.Set<Category>().Remove(category);
+
+            //        await context.SaveChangesAsync();
+
+            //        Console.WriteLine("Category deleted successfully");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Category not found");
+            //    }
+            //}
+
+            ////3.
+            //int courseIdToDelete = 1;
+
+            //// Count before deletion
+            //int countBefore = await context.Set<StudentCourse>()
+            //    .CountAsync(sc => sc.CourseId == courseIdToDelete);
+
+            //Console.WriteLine($"Enrollments before: {countBefore}");
+
+            //var courseToDelete = await context.Set<Course>()
+            //    .FindAsync(courseIdToDelete);
+
+            //if (courseToDelete is null)
+            //{
+            //    Console.WriteLine("Course not found");
+            //}
+            //else if (countBefore == 0)
+            //{
+            //    Console.WriteLine("Choose a course that has enrollments");
+            //}
+            //else
+            //{
+            //    context.Set<Course>().Remove(courseToDelete);
+
+            //    await context.SaveChangesAsync();
+
+            //    // Enrollments are deleted automatically
+            //    // because the Course -> StudentCourse FK
+            //    // is configured with Cascade Delete.
+
+            //    int countAfter = await context.Set<StudentCourse>()
+            //        .CountAsync(sc => sc.CourseId == courseIdToDelete);
+
+            //    Console.WriteLine($"Enrollments after: {countAfter}");
+            //}
+
+            #endregion
+
         }
     }
 }
